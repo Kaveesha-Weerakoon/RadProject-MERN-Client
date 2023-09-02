@@ -31,7 +31,7 @@ export const Login = () => {
                 <h2 className='registerformh1'>Login</h2>
 
                 <div className='registerformgroup'>
-                    <label className="registerformlabel" htmlFor="email">Name</label>
+                    <label className="registerformlabel" htmlFor="email" type="email">Email</label>
                     <input className="registerforminput1" required minLength={5} value={email} type="text" id="email" onChange={(event) => { setEmail(event.target.value) }} />
                 </div>
                 <div className='registerformgroup'>
