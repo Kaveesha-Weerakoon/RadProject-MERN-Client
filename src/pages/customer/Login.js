@@ -26,18 +26,20 @@ export const Login = () => {
     }
 
     return (
-        <div>
-            <form onSubmit={onSubmit} action="onSubmit">
+        <div className='Login-main'>
+            <form onSubmit={onSubmit} action="onSubmit" className='login-form'>
+                <h2 className='registerformh1'>Login</h2>
+
                 <div className='registerformgroup'>
                     <label className="registerformlabel" htmlFor="email">Name</label>
-                    <input className="registerforminput" required minLength={5} value={email} type="text" id="email" onChange={(event) => { setEmail(event.target.value) }} />
+                    <input className="registerforminput1" required minLength={5} value={email} type="text" id="email" onChange={(event) => { setEmail(event.target.value) }} />
                 </div>
                 <div className='registerformgroup'>
                     <label className="registerformlabel" htmlFor="password">Password</label>
-                    <input className="registerforminput" required minLength={5} value={password} type="password" id="password" onChange={(event) => { setPassword(event.target.value) }} />
+                    <input className="registerforminput1" required minLength={5} value={password} type="password" id="password" onChange={(event) => { setPassword(event.target.value) }} />
                 </div>
-                <div >
-                    <button type='submit'>Register</button>
+                <div className='login-form-button' >
+                    <button type='submit' className='registerbutton'>Login</button>
                 </div>
             </form>
 

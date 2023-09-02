@@ -39,7 +39,7 @@ export const Register = () => {
                 </div>
                 <div className='registerformgroup'>
                     <label className="registerformlabel" htmlFor="contactnumber">Contact Number</label>
-                    <input className="registerforminput" required minLength={5} value={contactno} type="number" id="contactnumber" onChange={(event) => { setContact(event.target.value) }} />
+                    <input className="registerforminput" required minLength={5} value={contactno} type="text" id="contactnumber" onChange={(event) => { setContact(event.target.value) }} />
                 </div>
                 <div className='registerformgroup'>
                     <label className="registerformlabel" htmlFor="dob">Date of Birth</label>
