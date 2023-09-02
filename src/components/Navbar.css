@@ -23,7 +23,7 @@
 .navbarlinkbutton {
     text-decoration: none;
     color: white;
-    margin: 0 20px;
+    margin: 0 15px;
     font-family: 'Roboto', sans-serif;
     font-size: 17px;
     font-weight: 550;
@@ -38,9 +38,14 @@
     background-color: #FFA801;
     color: black;
     font-weight: 550;
+    text-decoration: none;
 }
 
 .navbarlinkbutton:hover {
+    background-color: #fed330;
+}
+
+.navbarlinkbuttonl:hover {
     background-color: #fed330;
 }
 
@@ -54,4 +59,41 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+}
+
+.navbar-right-logout {
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.welcome {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.navbarlinkbuttonl {
+    text-decoration: none;
+    color: white;
+    margin: 0 15px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 550;
+    letter-spacing: 1px;
+
+    width: 90px;
+    height: 28px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #FFA801;
+    color: black;
+    font-weight: 550;
+    text-decoration: none;
 }

@@ -16,7 +16,7 @@ export const Login = () => {
         try {
             const response = await axios.post('http://localhost:3001/Customer/login', { email, password });
             setCookies("access_token", response.data.token);
-            window.localStorage.setItem("userID", response.data.useID);
+            window.localStorage.setItem("userID", response.data.userID);
             navigate("/");
         }
         catch (error) {
