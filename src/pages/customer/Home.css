@@ -1,0 +1,8 @@
+.Hometop {
+    width: 100%;
+    height: 675px;
+    background-image: url('../../../public/Cover.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
