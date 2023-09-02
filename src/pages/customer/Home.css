@@ -2,7 +2,7 @@
 
 .Hometop {
     width: 100%;
-    height: 675px;
+    height: 685px;
     background-image: url('../../../public/Cover.jpg');
     background-position: center center;
     background-repeat: no-repeat;
@@ -52,4 +52,17 @@ h3 {
     font-size: 30px;
     margin-left: 80px;
     cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+
+.Hometopbutton:hover {
+
+    background-color: #2f3640;
+
+    border-color: black;
+    border: 3px solid #808080;
+    cursor: pointer;
+
+
 }
