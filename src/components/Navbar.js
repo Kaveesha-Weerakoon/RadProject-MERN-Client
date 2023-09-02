@@ -21,9 +21,9 @@ export const Navbar = () => {
         try {
             const userId = window.localStorage.getItem("userID");
             console.log(userId);
-            /* const response = await axios.get(`http://localhost:3001/Customer/customer/`, { userId });
-             const { username } = response.data;
-             setUserName(username);*/
+            const response = await axios.get(`http://localhost:3001/Customer/customer/${userId}`);
+            const { username } = response.data;
+            setUserName(username);
         } catch (error) {
             console.error("Error fetching user name:", error);
         }
