@@ -9,6 +9,7 @@ export const Register = () => {
     const [contactno, setContact] = useState("");
     const [dateofbirth, setDOB] = useState("");
     const [password, setPassword] = useState("");
+
     const onSubmit = async (event) => {
         event.preventDefault();
         try {
@@ -24,7 +25,7 @@ export const Register = () => {
 
     return (
         <div className="registermain">
-            <form onSubmit={onSubmit} className='registerform' action="">
+            <form onSubmit={onSubmit} className='registerform' action="onSubmit">
 
                 <h2 className='registerformh1'>Join Now For Free</h2>
 
