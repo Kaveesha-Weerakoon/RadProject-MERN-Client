@@ -32,6 +32,7 @@ export const Navbar = () => {
     useEffect(() => {
 
         if (cookies.access_token) {
+            console.log('asa');
             fetchUserName();
         }
     }, [cookies.access_token]);
