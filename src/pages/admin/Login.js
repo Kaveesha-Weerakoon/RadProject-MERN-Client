@@ -32,7 +32,7 @@ export const AdminLogin = () => {
             <h1 className='AdminLoginh1'>ADMIN LOGIN</h1>
 
             <div className='registerformgroupAdmin'>
-                <label className="registerformlabel" htmlFor="email" type="emails">Email</label>
+                <label className="registerformlabel" htmlFor="email" type="emails">Username</label>
                 <input className="registerforminput1" required minLength={5} value={username} type="text" id="email" onChange={(event) => { setUsername(event.target.value) }} />
             </div>
             <div className='registerformgroupAdmin'>

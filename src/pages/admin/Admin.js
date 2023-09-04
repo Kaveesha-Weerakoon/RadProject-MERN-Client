@@ -10,7 +10,7 @@ export const Admin = () => {
         setCookies("admin_token", "");
         window.localStorage.removeItem("adminID");
         navigate('/admin')
-        console.log(cookies);
+
     }
     return <div><button onClick={logout}>Logout</button></div>
 }

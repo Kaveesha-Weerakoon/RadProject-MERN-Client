@@ -10,6 +10,7 @@ import { Contactus } from './pages/customer/Contactus.js';
 import HHome from './HHome';
 import { Admin } from './pages/admin/Admin';
 import { useCookies } from 'react-cookie';
+import { AccessDenied } from './SupComponents/AccessDenied';
 
 
 function App() {
@@ -26,21 +27,29 @@ function App() {
             <Route path='/aboutus' element={<Aboutus />} />
             <Route path='/contactus' element={<Contactus />} />
           </Route >
-          <Route path='/admin' element={<AdminLogin />}> </Route>
-          <Route path='/adminlogged' element={<Adminelemet><Admin /></Adminelemet>}> </Route>
+          <Route path='/admin' element={<Adminloginverify><AdminLogin /></Adminloginverify>}> </Route>
+          <Route path='/adminlogged' element={<Adminverify><Admin /></Adminverify>}> </Route>
 
         </Routes>
-      </Router>
+      </Router >
 
     </div >
   );
 
-  function Adminelemet({ children }) {
+  function Adminverify({ children }) {
     if (cookies.admin_token) {
       return <>{children}</>;
       console.log('sdd');
     }
-    return <div>Access Denied</div>
+    return <div><AccessDenied message={'Access Denied'} /></div>
+  }
+
+  function Adminloginverify({ children }) {
+    if (!cookies.admin_token) {
+      return <>{children}</>;
+
+    }
+    return <div><AccessDenied message={'Your are Logged In'} /></div>
   }
 }
 
