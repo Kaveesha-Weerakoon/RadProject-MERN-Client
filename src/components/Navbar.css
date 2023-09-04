@@ -39,6 +39,7 @@
     color: black;
     font-weight: 550;
     text-decoration: none;
+    border: none;
 }
 
 .navbarlinkbutton:hover {

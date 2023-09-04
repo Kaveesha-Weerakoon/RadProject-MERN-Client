@@ -54,7 +54,7 @@ export const Navbar = () => {
 
                 <div className="navbar-right-logout">
                     <div className="welcome">Welcome {userName}</div>
-                    <button className="navbarlinkbuttonl" onClick={logout}>
+                    <button className="navbarlinkbutton" onClick={logout}>
                         Logout
                     </button>
                 </div>
