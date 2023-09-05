@@ -34,8 +34,18 @@ export const Update = () => {
     }, [cookies.access_token]);
 
 
-    const onSubmit = () => {
-        console.log('sds');
+    const onSubmit = async (event) => {
+        event.preventDefault();
+        try {
+            const userId = window.localStorage.getItem("userID");
+            const response = await axios.put(`http://localhost:3001/Customer/customer/${userId}`, { username, address, contactno });
+            alert('Details Updated')
+
+        }
+        catch (error) {
+            alert("Invalid E mail/Password");
+
+        }
     }
     return <div className='Update-main'>
         <div className="Update-main-left"></div>
@@ -48,14 +58,14 @@ export const Update = () => {
             </div>
             <div className='registerformgroup'>
                 <label className="registerformlabel" htmlFor="email">Email</label>
-                <input className="registerforminput" value={email} required minLength={5} type="email" id="email" onChange={(event) => { setemail(event.target.value) }} />
+                <input className="registerforminput" value={email} readOnly required minLength={5} type="email" id="email" onChange={(event) => { setemail(event.target.value) }} />
             </div>
             <div className='registerformgroup'>
                 <label className="registerformlabel" htmlFor="contactnumber">Contact Number</label>
                 <input className="registerforminput" value={contactno} required minLength={5} type="number" id="contactnumber" onChange={(event) => { setcontactno(event.target.value) }} />
             </div>
             <div className='registerformgroup'>
-                <label className="registerformlabel" htmlFor="dob">Adress</label>
+                <label className="registerformlabel" htmlFor="dob">Address</label>
                 <input className="registerforminput" value={address} required minLength={5} type="text" id="dob" onChange={(event) => { setaddress(event.target.value) }} />
             </div>
             <div className='regbutton '>

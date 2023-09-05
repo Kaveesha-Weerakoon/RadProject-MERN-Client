@@ -42,7 +42,7 @@ export const Register = () => {
                     <input className="registerforminput" required minLength={5} value={contactno} type="text" id="contactnumber" onChange={(event) => { setContact(event.target.value) }} />
                 </div>
                 <div className='registerformgroup'>
-                    <label className="registerformlabel" htmlFor="dob">Adress</label>
+                    <label className="registerformlabel" htmlFor="dob">Address</label>
                     <input className="registerforminput" required minLength={5} value={address} type="text" id="dob" onChange={(event) => setAdress(event.target.value)} />
                 </div>
                 <div className='registerformgroup'>
