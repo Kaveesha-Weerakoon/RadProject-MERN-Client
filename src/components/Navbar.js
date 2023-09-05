@@ -32,7 +32,6 @@ export const Navbar = () => {
     useEffect(() => {
 
         if (cookies.access_token) {
-            console.log('asa');
             fetchUserName();
         }
     }, [cookies.access_token]);
@@ -53,9 +52,13 @@ export const Navbar = () => {
             ) : (
 
                 <div className="navbar-right-logout">
-                    <div className="welcome">Welcome {userName}</div>
+                    <Link to={'/updateprofile'} className="navbar-right-logout-link">
+                        <div className="profilephoto"></div>
+                        <div className="welcome">{userName}</div>
+                    </Link>
+
                     <button className="navbarlinkbutton" onClick={logout}>
-                        Logout
+                        Log Out
                     </button>
                 </div>
             )
@@ -64,6 +67,6 @@ export const Navbar = () => {
         </div>
 
 
-    </div>)
+    </div >)
 }
 //

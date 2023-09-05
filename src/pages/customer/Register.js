@@ -7,13 +7,13 @@ export const Register = () => {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [contactno, setContact] = useState("");
-    const [dateofbirth, setDOB] = useState("");
+    const [address, setAdress] = useState("");
     const [password, setPassword] = useState("");
 
     const onSubmit = async (event) => {
         event.preventDefault();
         try {
-            const hello = await axios.post('http://localhost:3001/Customer/register', { username, email, dateofbirth, contactno, password });
+            const hello = await axios.post('http://localhost:3001/Customer/register', { username, email, address, contactno, password });
             alert("Registration Completed! Now login");
 
         }
@@ -42,8 +42,8 @@ export const Register = () => {
                     <input className="registerforminput" required minLength={5} value={contactno} type="text" id="contactnumber" onChange={(event) => { setContact(event.target.value) }} />
                 </div>
                 <div className='registerformgroup'>
-                    <label className="registerformlabel" htmlFor="dob">Date of Birth</label>
-                    <input className="registerforminput" required minLength={5} value={dateofbirth} type="text" id="dob" onChange={(event) => setDOB(event.target.value)} />
+                    <label className="registerformlabel" htmlFor="dob">Adress</label>
+                    <input className="registerforminput" required minLength={5} value={address} type="text" id="dob" onChange={(event) => setAdress(event.target.value)} />
                 </div>
                 <div className='registerformgroup'>
                     <label className="registerformlabel" htmlFor="password">Password</label>
