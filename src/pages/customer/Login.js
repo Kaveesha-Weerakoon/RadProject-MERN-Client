@@ -11,10 +11,12 @@ export const Login = () => {
     const navigate = useNavigate();
     const [_, setCookies] = useCookies("access_token");
 
-    const onSubmit = async (event) => {
+    const onSubmitt = async (event) => {
         event.preventDefault();
         try {
+
             const response = await axios.post('http://localhost:3001/Customer/login', { email, password });
+            console.log(response);
             setCookies("access_token", response.data.token);
             window.localStorage.setItem("userID", response.data.userID);
             navigate("/");
@@ -27,7 +29,7 @@ export const Login = () => {
 
     return (
         <div className='Login-main'>
-            <form onSubmit={onSubmit} action="onSubmit" className='login-form'>
+            <form onSubmit={onSubmitt} action="onSubmit" className='login-form'>
                 <h2 className='registerformh1'>Login</h2>
 
                 <div className='registerformgroup'>
