@@ -5,20 +5,16 @@ import Add from "../../components/add/add_worker";
 import { userRows } from "../../data";
 import noavatar from '../../assests/noavatar.png';
 import axios from "axios"
+import Update from "../../components/update/update_workers";
 
 
 const Users = () => {
   const [open, setOpen] = useState(false);
   const [users,setUsers]=useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
 
-  const handleSearch = (e) => {
-    setSearchTerm(e.target.value.toLowerCase());
-  };
+  const [update,setUpdate]=useState(false);
 
-  const filteredUsers = users.filter((user) =>
-    user.username.toLowerCase().includes(searchTerm)
-  );
+ 
   const fetchUsers = async () => {
     try {
       
@@ -36,20 +32,20 @@ const Users = () => {
          fetchUsers();
   },[]);
   
-
-
   return (
     <div className="users">
     <div className="info">
       <h1>Users</h1>
     </div>
     <UserTable fetchUsers={fetchUsers} users={users} /> 
+    {update && <Update slug="worker"  setUpdate={setUpdate} fetchuser={fetchUsers} />}
+
   </div>
   );
 };
 
 
-function UserTable({ users,fetchUsers }) {
+function UserTable({ users,fetchUsers,setUpdate }) {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleSearch = (e) => {
@@ -72,11 +68,9 @@ function UserTable({ users,fetchUsers }) {
             alert("Invalid E mail/Password");
 
         }
-      };
+  };
 
-const onUpdateUser= users.filter((user) =>
-user.username.toLowerCase().includes(searchTerm)
-);
+  
 
   return (
     <div className="usertable">
@@ -95,7 +89,7 @@ user.username.toLowerCase().includes(searchTerm)
           <th className="usertable_th">Email Address</th>
           <th className="usertable_th">Contact Number</th>
           <th className="usertable_th">Address</th>
-          <th className="usertable_th">Action</th> {/* Add the Action column for buttons */}
+          <th className="usertable_th">Action</th> 
         </tr>
       </thead>
       <tbody>
@@ -108,7 +102,7 @@ user.username.toLowerCase().includes(searchTerm)
             <td className="usertable_td">{user.address}</td>
             <td className="usertable_td usertablebutton">
               <button className="usertable_delete" onClick={() => onDeleteUser(user._id)}>Delete</button>
-              <button className="usertable_update" onClick={() => onUpdateUser(user._id)}>Update</button>
+              
             </td>
           </tr>
         ))}

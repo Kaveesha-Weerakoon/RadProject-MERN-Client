@@ -30,7 +30,7 @@ const Add = ({slug, setOpen, fetchuser}) => {
         <span className="close" onClick={() => setOpen(false)}>
       close
         </span>
-        <h1>Add New {slug}</h1>
+        <h1>Add Worker</h1>
         <form onSubmit={handleSubmit}>
               <div className="item">
                 <label>Name</label>

@@ -10,22 +10,15 @@ import Update from "../../components/update/update_workers";
 const Workers = () => {
   const [open, setOpen] = useState(false);
   const [users,setUsers]=useState([]);
+  const [userid,setuserid]=useState("");
   const [update,setUpdate]=useState(false);
-  const [searchTerm, setSearchTerm] = useState('');
-  const handleSearch = (e) => {
-    setSearchTerm(e.target.value.toLowerCase());
-  };
-
-  const filteredUsers = users.filter((user) =>
-    user.name.toLowerCase().includes(searchTerm)
-  );
+ 
   const fetchUsers = async () => {
     try {
-        console.log('Hello WIRD');
         const response = await axios.get(`http://localhost:3001/Workers/worker/`);
         const jsonData = response.data;
         setUsers(jsonData);
-        console.log(jsonData);
+       
       
     } catch (error) {
         console.error("Error fetching user name:", error);
@@ -41,18 +34,18 @@ const Workers = () => {
     <div className="users">
     <div className="info">
       <button className="worker_addbutton" onClick={() => setOpen(true)}>Add New Worker</button>
-      <h1>Users</h1>
+      <h1>Store Workers</h1>
     </div>
-    <UserTable fetchUsers={fetchUsers} users={users}  setUpdate={setUpdate} /> 
+    <UserTable fetchUsers={fetchUsers} users={users}  setUpdate={setUpdate} setuserID={setuserid} /> 
     {open && <Add slug="worker"  setOpen={setOpen} fetchuser={fetchUsers}/>}
-    {update && <Update slug="worker"  setUpdate={setUpdate} fetchuser={fetchUsers} />}
+    {update && <Update slug="worker"  setUpdate={setUpdate} fetchuser={fetchUsers} userid={userid} />}
  
   </div>
   );
 };
 
 
-function UserTable({ users,fetchUsers,setUpdate }) {
+function UserTable({ users,fetchUsers,setUpdate,setuserID }) {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleSearch = (e) => {
@@ -79,10 +72,9 @@ function UserTable({ users,fetchUsers,setUpdate }) {
 
 const onUpdateUser = (user) =>{
 setUpdate(true);
+setuserID(user);
 }
       
-
-
   return (
     <div className="usertable">
     <input

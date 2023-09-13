@@ -14,6 +14,7 @@ export const Update = () => {
 
     const fetchUserName = async () => {
         try {
+
             const userId = window.localStorage.getItem("userID");
             const response = await axios.get(`http://localhost:3001/Customer/customer/${userId}`);
             const { username, email, address, contactno, } = response.data;

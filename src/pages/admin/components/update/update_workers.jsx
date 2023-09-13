@@ -3,7 +3,7 @@ import "./add.css";
 import axios from 'axios';
 import { useState } from 'react';
 
-const Update = ({slug, setUpdate, fetchuser}) => {
+const Update = ({slug, setUpdate, fetchuser,userid}) => {
 
   const [name,setName]=useState("");
   const [nic,setNIC]=useState("");
@@ -13,7 +13,7 @@ const Update = ({slug, setUpdate, fetchuser}) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-        const hello = await axios.put('http://localhost:3001/Workers/worker/');
+        const hello = await axios.put(`http://localhost:3001/Workers/worker/${userid}`,{name,nic,address,contactno});
         alert("Worker Updated Successfully");
         fetchuser();
     }

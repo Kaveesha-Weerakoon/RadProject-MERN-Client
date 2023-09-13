@@ -36,11 +36,7 @@ const Orders = () => {
 
   return (
     <div className="orders">
-      <div className="info">
-        <h1>Orders</h1>
-        
-      </div>
-      <DataTable slug="orders" columns={columns} rows={orders} />
+      Order
       
     </div>
   );
