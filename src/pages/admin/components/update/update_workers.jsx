@@ -3,7 +3,7 @@ import "./add.css";
 import axios from 'axios';
 import { useState } from 'react';
 
-const Add = ({slug, setOpen, fetchuser}) => {
+const Update = ({slug, setUpdate, fetchuser}) => {
 
   const [name,setName]=useState("");
   const [nic,setNIC]=useState("");
@@ -13,24 +13,24 @@ const Add = ({slug, setOpen, fetchuser}) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-        const hello = await axios.post('http://localhost:3001/Workers/register', { name, nic,contactno,address });
-        alert("Worker Added Successfully");
+        const hello = await axios.put('http://localhost:3001/Workers/worker/');
+        alert("Worker Updated Successfully");
         fetchuser();
     }
     catch (error) {
-        alert("NIC Have Taken");
+        alert("Error Occured");
 
     }
-    setOpen(false)
+    setUpdate(false)
   };
 
   return (
     <div className="add">
       <div className="modal">
-        <span className="close" onClick={() => setOpen(false)}>
+        <span className="close" onClick={() => setUpdate(false)}>
       close
         </span>
-        <h1>Add New {slug}</h1>
+        <h1>Update {slug}</h1>
         <form onSubmit={handleSubmit}>
               <div className="item">
                 <label>Name</label>
@@ -49,11 +49,11 @@ const Add = ({slug, setOpen, fetchuser}) => {
                 <input type="Number" required={true} min={5} placeholder="Number"onChange={(event) => { setContact(event.target.value) }} />
               </div>
   
-          <button type='submit'>ADD</button>
+          <button type='submit'>Update</button>
         </form>
       </div>
     </div>
   );
 };
 
-export default Add;
+export default Update;

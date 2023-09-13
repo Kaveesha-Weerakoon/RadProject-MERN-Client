@@ -5,12 +5,13 @@ import Add from "../../components/add/add_worker";
 import { workers } from "../../data";
 import axios from "axios"
 import React,{ useEffect} from "react"
+import Update from "../../components/update/update_workers";
 
 const Workers = () => {
   const [open, setOpen] = useState(false);
   const [users,setUsers]=useState([]);
+  const [update,setUpdate]=useState(false);
   const [searchTerm, setSearchTerm] = useState('');
-  const [columns, setcolumns] = useState([{ headerName: "Name", type: "String", field: "Name" },{ headerName: "NIC", type: "String", field: "NIC" },{ headerName: "Address", type: "String", field: "Address" },{ headerName: "Address", type: "String", field: "Contactno" }]);
   const handleSearch = (e) => {
     setSearchTerm(e.target.value.toLowerCase());
   };
@@ -42,14 +43,16 @@ const Workers = () => {
       <button className="worker_addbutton" onClick={() => setOpen(true)}>Add New Worker</button>
       <h1>Users</h1>
     </div>
-    <UserTable fetchUsers={fetchUsers} users={users} /> 
-    {open && <Add slug="worker" columns={columns} setOpen={setOpen} fetchuser={fetchUsers}/>}
+    <UserTable fetchUsers={fetchUsers} users={users}  setUpdate={setUpdate} /> 
+    {open && <Add slug="worker"  setOpen={setOpen} fetchuser={fetchUsers}/>}
+    {update && <Update slug="worker"  setUpdate={setUpdate} fetchuser={fetchUsers} />}
+ 
   </div>
   );
 };
 
 
-function UserTable({ users,fetchUsers }) {
+function UserTable({ users,fetchUsers,setUpdate }) {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleSearch = (e) => {
@@ -74,9 +77,11 @@ function UserTable({ users,fetchUsers }) {
         }
       };
 
-const onUpdateUser= users.filter((user) =>
-user.name.toLowerCase().includes(searchTerm)
-);
+const onUpdateUser = (user) =>{
+setUpdate(true);
+}
+      
+
 
   return (
     <div className="usertable">

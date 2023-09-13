@@ -3,7 +3,6 @@ import "./users.css";
 import React,{ useEffect, useState } from "react"
 import Add from "../../components/add/add_worker";
 import { userRows } from "../../data";
-// import { useQuery } from "@tanstack/react-query";
 import noavatar from '../../assests/noavatar.png';
 import axios from "axios"
 
