@@ -22,7 +22,6 @@ import {
 import Problems from './pages/admin/pages/problems/problems';
 import Users from './pages/admin/pages/users/users';
 import { Update } from './pages/customer/Update';
-import Product from './pages/admin/pages/product/product';
 import Workers from './pages/admin/pages/workers/workers';
 import Products from './pages/admin/pages/products/products';
 import { useEffect, useState } from "react"

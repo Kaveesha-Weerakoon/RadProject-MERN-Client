@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./products.css";
 import DataTable from "../../components/dataTable/dataTable";
-import Add from "../../components/add/add";
+import Add from "../../components/add/add_worker";
 import { products } from "../../data";
 
 const columns = [

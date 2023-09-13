@@ -46,7 +46,7 @@ export const menu = [
       },
       {
         id: 4,
-        title: "User Problems",
+        title: "Contact Form",
         url: "/adminlogged/problems",
         icon: post2,
       },

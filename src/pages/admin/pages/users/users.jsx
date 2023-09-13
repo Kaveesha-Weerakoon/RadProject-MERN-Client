@@ -1,39 +1,11 @@
 import DataTable from "../../components/dataTable/dataTable";
 import "./users.css";
 import React,{ useEffect, useState } from "react"
-import Add from "../../components/add/add";
+import Add from "../../components/add/add_worker";
 import { userRows } from "../../data";
 // import { useQuery } from "@tanstack/react-query";
 import noavatar from '../../assests/noavatar.png';
 import axios from "axios"
-const columns = [
-  { field: "id", headerName: "ID", width: 90 },
-  {
-    field: "name",
-    type: "string",
-    headerName: "Name",
-    width: 200,
-  },
-  {
-    field: "email",
-    type: "string",
-    headerName: "Email",
-    width: 200,
-  },
- 
-  {
-    field: "phone",
-    type: "string",
-    headerName: "Contact Number",
-    width: 150,
-  },
-  {
-    field: "address",
-    headerName: "Address",
-    width: 150,
-    type: "string",
-  },
-];
 
 
 const Users = () => {
