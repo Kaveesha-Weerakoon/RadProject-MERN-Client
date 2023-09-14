@@ -39,7 +39,7 @@ export const Navbar = () => {
     return (<div className="navbar">
         <div className="navbar-left">
             <Link className="navbarlink" to={'/'}>Home</Link>
-            <Link className="navbarlink" to={'/'}>Shop Now</Link>
+            <Link className="navbarlink" to={'/products'}>Shop Now</Link>
             <Link className="navbarlink" to={'/aboutus'}>About Us</Link>
             <Link className="navbarlink" to={'/contactus'}>Contact Us</Link>
         </div>

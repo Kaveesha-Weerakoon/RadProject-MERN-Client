@@ -17,6 +17,7 @@ import React from 'react';
 import { Orders } from './pages/customer/Orders';
 import ProductView from './pages/customer/productView/productView';
 import Cart from './pages/customer/cart/cart';
+import Products from './components/products/products';
 export {
     React,
     Router,
@@ -38,5 +39,6 @@ export {
     AdminLogin,
     Orders,
     ProductView,
-    Cart
+    Cart,
+    Products
 };

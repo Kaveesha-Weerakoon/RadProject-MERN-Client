@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom"
 import React from 'react';
 import ProductView  from './pages/customer/productView/productView';
 import Cart from './pages/customer/cart/cart';
+import Products from './components/products/products';
 export {
     Router,
     Routes,
@@ -30,5 +31,6 @@ export {
     useNavigate,
     React,
     ProductView,
-    Cart
+    Cart,
+    Products
 };

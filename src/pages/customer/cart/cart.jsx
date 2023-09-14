@@ -80,7 +80,7 @@ const Cart = () => {
               <p>Rs.320750</p>
             </div>
             <div className='cart_button'>
-                <button>CHECKOUT NOW</button>
+                <button>PLACE ODER</button>
             </div>
             </div>
 
