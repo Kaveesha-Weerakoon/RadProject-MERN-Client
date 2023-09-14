@@ -41,19 +41,36 @@
 }
 
 .productView_add_container input{
-    padding: 8px 12px;
-    width: 60px;
+    padding: 12px 12px;
+    width: 70px;
     margin-right: 5px;
 }
 
 .productView_add_container button {
     padding: 12px 40px;
-    background-color: darkgoldenrod;
+    background-color: #FFA801;
     border: none;
     font-family: 'Inter', sans-serif;
 }
 
 .productView_add_container button:hover {
     cursor: pointer;
-    background-color: burlywood;
+    background-color: #fed330;
+}
+
+.productView_container_icon {
+    display: flex;
+    margin: 10px 0;
+}
+
+.linkto_cart {
+    padding: 12px 40px;
+    background-color: #FFA801;
+    border: none;
+    font-family: 'Inter', sans-serif;
+}
+
+.linkto_cart:hover {
+    cursor: pointer;
+    background-color: #fed330;
 }

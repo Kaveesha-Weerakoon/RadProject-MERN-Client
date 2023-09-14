@@ -3,6 +3,7 @@ import {
     Home, Register, Login, Routes, Route, Router, useLocation, AdminLogin, Aboutus, Navbar, Contactus, UpdateProfile, useCookies, useNavigate, React,
 } from './HHomeI';
 import { Update } from './pages/customer/Update';
+import Cart from './pages/customer/cart/cart';
 import ProductView from './pages/customer/productView/productView';
 
 function HHome() {
@@ -18,6 +19,7 @@ function HHome() {
                 <Route path='/aboutus' element={<Aboutus />} />
                 <Route path='/contactus' element={<Contactus />} />
                 <Route path='/productview' element={<ProductView />} />
+                <Route path='/cart' element={<Cart />} />
                 <Route path='/updateprofile' element={<CustomerVerify><UpdateProfile /></CustomerVerify>} >
                     <Route path='/updateprofile/orders' element={<CustomerVerify><Orders /></CustomerVerify>} />
                     <Route path='/updateprofile/' element={<CustomerVerify><Update /></CustomerVerify>} />

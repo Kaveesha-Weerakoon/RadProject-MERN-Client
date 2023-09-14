@@ -26,6 +26,7 @@ import Workers from './pages/admin/pages/workers/workers';
 import Products from './pages/admin/pages/products/products';
 import { useEffect, useState } from "react"
 import ProductView from './pages/customer/productView/productView';
+import Cart from './pages/customer/cart/cart';
 
 function App() {
   const [cookies, setCookies] = useCookies(["admin_token", "access_token"]);
@@ -42,6 +43,7 @@ function App() {
             <Route path='/aboutus' element={<Aboutus />} />
             <Route path='/contactus' element={<Contactus />} />
             <Route path='/productview' element={<ProductView />} />
+            <Route path='/cart' element={<Cart />} />
             <Route path='/updateprofile' element={<UpdateProfile />} >
               <Route path='/updateprofile/orders' element={<Orders />} />
               <Route path='/updateprofile/' element={<Update />} />

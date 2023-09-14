@@ -6,11 +6,16 @@ import './products.css';
 
 const Products = () => {
   return (
-    
     <div className='products_container'>
+      <div className='products_title'>  
+        <h1>Featured Products</h1>
+      </div>
+    
+      <div className='products_container_list'>
         {popularProducts.map((item) => (
             <Product item={item} key={item.id} />
         ))}
+      </div>
     </div>
   )
 }

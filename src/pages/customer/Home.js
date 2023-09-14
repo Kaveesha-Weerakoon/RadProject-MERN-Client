@@ -1,5 +1,6 @@
 import Products from '../../components/products/products';
 import './Home.css'
+import Footer from './Footer';
 
 export const Home = () => {
     return (<div>
@@ -15,5 +16,6 @@ export const Home = () => {
         </div>
 
         <Products />
+        <Footer />
     </div >);
 }

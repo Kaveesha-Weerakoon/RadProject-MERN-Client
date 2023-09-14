@@ -12,6 +12,7 @@ import { useCookies } from 'react-cookie'
 import { useNavigate } from "react-router-dom"
 import React from 'react';
 import ProductView  from './pages/customer/productView/productView';
+import Cart from './pages/customer/cart/cart';
 export {
     Router,
     Routes,
@@ -28,5 +29,6 @@ export {
     useCookies,
     useNavigate,
     React,
-    ProductView
+    ProductView,
+    Cart
 };

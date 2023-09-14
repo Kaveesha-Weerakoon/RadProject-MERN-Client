@@ -16,6 +16,7 @@ import { AccessDenied } from './SupComponents/AccessDenied';
 import React from 'react';
 import { Orders } from './pages/customer/Orders';
 import ProductView from './pages/customer/productView/productView';
+import Cart from './pages/customer/cart/cart';
 export {
     React,
     Router,
@@ -36,5 +37,6 @@ export {
     Admin,
     AdminLogin,
     Orders,
-    ProductView
+    ProductView,
+    Cart
 };
