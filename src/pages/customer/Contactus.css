@@ -1,0 +1,61 @@
+.contactush1 {
+    padding-left: 30px;
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.contactusimg {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.contactusdiv {
+    position: absolute;
+    top: 20%;
+    left: 8%;
+    height: 100%;
+    width: 50%;
+    border-left: 6px solid #FFA801;
+    background-color: #fff6e6;
+}
+
+.contactusform {
+    padding-left: 30px;
+}
+
+.contactusta {
+    width: 600px;
+    height: 300px;
+    font-size: 20px;
+    resize: none;
+    border: none;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.contactusi {
+    width: 600px;
+    font-size: 20px;
+    border: none;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.contactusl {
+    font-size: 22px;
+}
+
+.contactuss {
+    width: 150px;
+    height: 50px;
+    border: 2px solid #FFA801;
+    border-radius: 10px;
+    background-color: #ffecca;
+    font-size: 20px;
+}
+
+.contactuss:hover {
+    background-color: #FFA801;
+    color: white;
+}
